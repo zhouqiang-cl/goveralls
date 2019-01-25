@@ -86,6 +86,7 @@ func toSF(profs []*cover.Profile) ([]*SourceFile, error) {
 	var rv []*SourceFile
 	for _, prof := range profs {
 		path, err := findFile(prof.FileName)
+		log.Printf("path is %s", path)
 		if err != nil {
 			log.Fatalf("Can't find %v", err)
 		}
