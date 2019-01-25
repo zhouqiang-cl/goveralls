@@ -185,7 +185,9 @@ var vscDirs = []string{".git", ".hg", ".bzr", ".svn"}
 
 func findRepositoryRoot(dir string) (string, bool) {
 	log.Printf("dir is %s", dir)
+	log.Printf("vsc dirs is %v", vscDirs)
 	for _, vcsdir := range vscDirs {
+		log.Printf("vcs dir is %s", vcsdir)
 		if d, err := os.Stat(filepath.Join(dir, vcsdir)); err == nil && d.IsDir() {
 			return dir, true
 		}
